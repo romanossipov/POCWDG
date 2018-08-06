@@ -1,35 +1,28 @@
 <?php
-header("Content-Type:application/json");
-require "data.php";
-
-if(!empty($_GET['name']))
-{
-	$name=$_GET['name'];
-	$price = get_price($name);
+/* 
+A domain Class to demonstrate RESTful web services
+*/
+Class Mobile {
 	
-	if(empty($price))
-	{
-		response(200,"Product Not Found",NULL);
+	private $mobiles = array(
+		1 => 'Apple iPhone 6S',  
+		2 => 'Samsung Galaxy S6',  
+		3 => 'Apple iPhone 6S Plus',  			
+		4 => 'LG G4',  			
+		5 => 'Samsung Galaxy S6 edge',  
+		6 => 'OnePlus 2');
+		
+	/*
+		you should hookup the DAO here
+	*/
+	public function getAllMobile(){
+		return $this->mobiles;
 	}
-	else
-	{
-		response(200,"Product Found",$price);
-	}
 	
+	public function getMobile($id){
+		
+		$mobile = array($id => ($this->mobiles[$id]) ? $this->mobiles[$id] : $this->mobiles[1]);
+		return $mobile;
+	}	
 }
-else
-{
-	response(400,"Invalid Request",NULL);
-}
-
-function response($status,$status_message,$data)
-{
-	header("HTTP/1.1 ".$status);
-	
-	$response['status']=$status;
-	$response['status_message']=$status_message;
-	$response['data']=$data;
-	
-	$json_response = json_encode($response);
-	echo $json_response;
-}
+?>
