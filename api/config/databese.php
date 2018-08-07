@@ -2,10 +2,10 @@
 class Database{
  
     // specify your own database credentials
-    private $host = "localhost";
+    private $host = "aziedb1rez463.mysql.database.azure.com";
     private $db_name = "api_db";
-    private $username = "root";
-    private $password = "";
+    private $username = "pocwdgaccount";
+    private $password = "YR4+_9gX\[";
     public $conn;
  
     // get the database connection
