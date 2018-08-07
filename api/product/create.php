@@ -18,7 +18,7 @@ $db = $database->getConnection();
 $product = new Product($db);
  
 // get posted data
-$data = (object) $_POST
+$data = (object) $_POST;
 
  
 // set product property values
