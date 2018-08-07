@@ -18,7 +18,8 @@ $db = $database->getConnection();
 $product = new Product($db);
  
 // get posted data
-$data = json_decode(file_get_contents("php://input"));
+$data = (object) $_POST
+
  
 // set product property values
 $product->name = $data->name;
