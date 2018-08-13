@@ -1,7 +1,7 @@
 <?php
 class Database{
  
-    // specify your own database credentials
+    // specify your own database credentials hellohelo
     private $host = "aziedb1rez463.mysql.database.azure.com";
     private $db_name = "api_db";
     private $username = "pocwdgaccount@aziedb1rez463";
